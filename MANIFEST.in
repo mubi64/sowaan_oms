@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sowaan_oms *.css
+recursive-include sowaan_oms *.csv
+recursive-include sowaan_oms *.html
+recursive-include sowaan_oms *.ico
+recursive-include sowaan_oms *.js
+recursive-include sowaan_oms *.json
+recursive-include sowaan_oms *.md
+recursive-include sowaan_oms *.png
+recursive-include sowaan_oms *.py
+recursive-include sowaan_oms *.svg
+recursive-include sowaan_oms *.txt
+recursive-exclude sowaan_oms *.pyc
