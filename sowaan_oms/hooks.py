@@ -9,6 +9,21 @@ app_color = "grey"
 app_email = "info@sowaan.com"
 app_license = "MIT"
 
+fixtures = [
+	{
+		"doctype":"Custom Field",
+		"filters":[
+			[
+				"dt",
+                "in",
+				(
+					"Sales Order"
+				)
+			]
+		]
+	}
+]
+
 # Includes in <head>
 # ------------------
 

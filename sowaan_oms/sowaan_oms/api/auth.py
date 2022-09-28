@@ -9,7 +9,7 @@ import random
 # )
 
 from frappe.utils.password import update_password
-
+import json
 @frappe.whitelist(allow_guest=True)
 def create_new_user(email, mobile_no, full_name, password):
     user = frappe.db.get("User", {"email": email})
@@ -42,9 +42,11 @@ def create_new_user(email, mobile_no, full_name, password):
         )
         user.flags.ignore_permissions = True
         #user.flags.ignore_password_policy = True
-        user.insert()
+        try:
+            user.insert()
+        except Exception as e:
+            frappe.throw(e)
         # update_password(user=user, pwd=password)
-
         # set default signup role as per Portal Settings
         default_role = frappe.db.get_value("Portal Settings", None, "default_role")
         if default_role:
